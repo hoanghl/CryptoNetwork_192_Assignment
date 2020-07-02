@@ -30,7 +30,10 @@ Em sẽ cập nhật các file này sau, hoặc anh có thể tự tạo test fi
 Đây sẽ là file mọi người code. Trong đó đã phân rõ ràng hàm của từng người, quy định luôn input đầu vào là gì và giá trị trả về là gì.
 
 ### 2.2.3. File `defaultFootprint.json`
-File này sẽ chứa các thông tin mà anh sẽ đối chiếu khi kiểm tra số lượng
+File này sẽ chứa các thông tin mà anh sẽ đối chiếu khi kiểm tra số lượng. Trong code em đã hiện thực sẵn phần code đọc file này nên anh chỉ cần sử dụng biến đó thôi.
 
 ### 2.3. Phân công
-
+| Thành viên | Nhiệm vụ |
+|:---|:---|
+| Khoa Trần | Hiện thực code kiểm tra defaced bằng kiểm tra số lượng các tag và số lượng các ký tự |
+| Hoàng Lê | Hiện thực code kiểm tra cấu trúc và kiểm tra sự bất thường |
