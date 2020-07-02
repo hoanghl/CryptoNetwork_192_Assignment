@@ -1,0 +1,13 @@
+__pycache__/
+.vscode
+.DS_Store
+
+*.pyc
+
+configs.json
+
+Pipfile.lock
+
+
+getInfo.py
+
