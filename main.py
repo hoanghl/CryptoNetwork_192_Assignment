@@ -28,21 +28,24 @@ if __name__ == "__main__":
     print("= Checking conditions: ")
 
     #### Kiểm tra cấu trúc
-    if not check_HoangLe_Structure(htmlParser):
+    if check_HoangLe_Structure(htmlParser):
         print("==> Defaced by Structure    : Yes")
-        sys.exit(0)
-    print("==> Defaced by Structure    : No")
+        # sys.exit(0)
+    else:
+        print("==> Defaced by Structure    : No")
 
 
     #### Kiểm tra số lượng các tag và số lượng chữ
-    if not check_KhoaTran_SizeQuantity(htmlParser):
+    if check_KhoaTran_SizeQuantity(htmlParser):
         print("==> Defaced by Size/Quantity: Yes")
-        sys.exit(0)
-    print("==> Defaced by Size/Quantity: No")
+        # sys.exit(0)
+    else:
+        print("==> Defaced by Size/Quantity: No")
 
 
     #### Kiểm tra màu sắc các thành phần quan trọng
-    if not check_HoangLe_Abnormal(htmlParser):
+    if check_HoangLe_Abnormal(htmlParser):
         print("==> Defaced by Color        : Yes")
-        sys.exit(0)
-    print("==> Defaced by Color        : No")
+        # sys.exit(0)
+    else:
+        print("==> Defaced by Color        : No")

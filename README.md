@@ -37,3 +37,15 @@ File này sẽ chứa các thông tin mà anh sẽ đối chiếu khi kiểm tra
 |:---|:---|
 | Khoa Trần | Hiện thực code kiểm tra defaced bằng kiểm tra số lượng các tag và số lượng các ký tự |
 | Hoàng Lê | Hiện thực code kiểm tra cấu trúc và kiểm tra sự bất thường |
+
+### 2.4. Hướng dẫn sử dụng các file trong thư mục `testing_html`
+Anh copy nội dung từng file trong đó rồi paste vào file `index.html` trong thư mục `thiswebsite`.
+
+### 2.5. Hướng dẫn chạy code
+Khi anh mở `cmd` thì anh phải nhập:
+> pipenv shell
+
+thì mới chạy được code.
+
+Câu lệnh chạy code như sau:
+> python main.py

@@ -2,6 +2,7 @@
 '''
 
 import json
+import re
 
 from bs4 import BeautifulSoup
 
@@ -37,6 +38,7 @@ def check_KhoaTran_SizeQuantity(htmlParser:BeautifulSoup) -> bool:
     return isDefaced
 
 
+
 def check_HoangLe_Structure(htmlParser:BeautifulSoup) -> bool:
     """ Hàm của Hoàng Lê, sẽ kiểm tra các yếu tố sau liên quan tới cấu trúc html:
 
@@ -46,12 +48,45 @@ def check_HoangLe_Structure(htmlParser:BeautifulSoup) -> bool:
     Returns:
         bool: True nếu bị defaced, otherwise False
     """
+    def construct(parser:BeautifulSoup) -> list:
+        """ Xây dựng cấu trúc cho phần tử được truyền vào
 
-    isDefaced = False
+        Args:
+            parser (BeautifulSoup): 
 
-    ## Code goes here..
+        Returns:
+            list: list các element
+        """
+        structure = []
+        for x in parser:
+            if isinstance(x, str):
+                continue
 
-    return isDefaced
+            if len(list(x.children)) > 0:
+                tmp = construct(x.children)
+                if len(tmp) > 0:
+                    structure.append([x.name, tmp])
+                else:
+                    structure.append(x.name)
+            else:
+                structure.append(x.name)
+
+        return structure
+
+
+    for structure in footprints['HoangLe_Structure']:
+        tmp = htmlParser.find(structure['tag'], id=structure['id'])
+        if tmp is None:
+            return True
+
+        series = str(construct(tmp))
+
+        if series != structure['series']:
+            return True
+
+    return False
+
+
 
 def check_HoangLe_Abnormal(htmlParser:BeautifulSoup) -> bool:
     """ Hàm của Hoàng Lê, sẽ kiểm tra các yếu tố sau liên quan tới CSS:
@@ -64,8 +99,22 @@ def check_HoangLe_Abnormal(htmlParser:BeautifulSoup) -> bool:
     Returns:
         bool: True nếu bị defaced, otherwise False
     """
-    isDefaced = False
+    ########################
+    ## Kiểm tra điều kiện màu nền chuyển đen
+    ########################
+    reStr_1 = r" \{([^}]*)\}"
 
-    ## Code goes here..
+    css_contents = str(htmlParser)
 
-    return isDefaced
+    css_attribute = re.findall("{}{}".format(footprints['HoangLe_Abnormal'][0]['tag'], reStr_1), css_contents)
+    if len(css_attribute) == 0:
+        return False
+
+    tmp = footprints['HoangLe_Abnormal'][0]['attribute'].replace('(', '\(').replace(')', '\)')
+
+    result = re.findall(tmp, css_attribute[0])
+
+    if len(result) > 0:
+        return True
+
+    return False
