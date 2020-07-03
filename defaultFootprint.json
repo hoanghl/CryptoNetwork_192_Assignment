@@ -33,7 +33,10 @@
             "series": "[['div', ['h2', ['div', [['article', ['img', ['div', ['div', ['h3', ['a']], 'p']]]], ['article', ['div', ['h3', ['a']], 'p']], ['article', ['img', 'div', ['h3', ['a']], 'p']], ['article', ['div', ['h3', ['a']], 'p', 'img']], ['article', ['img', 'div', ['h3', ['a']], 'p']], ['article', ['div', ['h3', ['a']], 'p']], ['article', [['div', ['div', ['h3', ['a']], 'p']], 'img']]]]]]]"
         }
     ],
-    "HoangLe_Abnormal": {
-            
-    }
+    "HoangLe_Abnormal": [
+        {
+            "tag": "body",
+            "attribute": "background-color: rgb(0, 0, 0);"
+        }
+    ]
 }

@@ -2,6 +2,7 @@
 '''
 
 import json
+import re
 
 from bs4 import BeautifulSoup
 
@@ -35,6 +36,7 @@ def check_KhoaTran_SizeQuantity(htmlParser:BeautifulSoup) -> bool:
     ## khỏi cần hiện thực code đọc 'defaultFootprint.json'
 
     return isDefaced
+
 
 
 def check_HoangLe_Structure(htmlParser:BeautifulSoup) -> bool:
@@ -84,6 +86,8 @@ def check_HoangLe_Structure(htmlParser:BeautifulSoup) -> bool:
 
     return False
 
+
+
 def check_HoangLe_Abnormal(htmlParser:BeautifulSoup) -> bool:
     """ Hàm của Hoàng Lê, sẽ kiểm tra các yếu tố sau liên quan tới CSS:
     - Màu nền
@@ -95,8 +99,22 @@ def check_HoangLe_Abnormal(htmlParser:BeautifulSoup) -> bool:
     Returns:
         bool: True nếu bị defaced, otherwise False
     """
-    isDefaced = False
+    ########################
+    ## Kiểm tra điều kiện màu nền chuyển đen
+    ########################
+    reStr_1 = r" \{([^}]*)\}"
 
-    ## Code goes here..
+    css_contents = str(htmlParser)
 
-    return isDefaced
+    css_attribute = re.findall("{}{}".format(footprints['HoangLe_Abnormal'][0]['tag'], reStr_1), css_contents)
+    if len(css_attribute) == 0:
+        return False
+
+    tmp = footprints['HoangLe_Abnormal'][0]['attribute'].replace('(', '\(').replace(')', '\)')
+
+    result = re.findall(tmp, css_attribute[0])
+
+    if len(result) > 0:
+        return True
+
+    return False

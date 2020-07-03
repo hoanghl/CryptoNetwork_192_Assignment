@@ -1,5 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    body {
+        background-color: rgb(0, 0, 0);
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Staatliches" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>NewsGrid | Latest News</title>
+</head>
+
+<body>
+    <nav id="main-nav">
+        <div class="container">
+            <!-- this is grid. I assigned to each item class grid-item to highlight it's borders. -->
+            <img src="img/logo.png" alt="NewsGrid" class="logo grid-item">
+            <div class="social grid-item">
+                <a href="http://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="http://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="http://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+            </div>
+            <ul class="grid-item">
+                <li><a class="current" href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
 
 
-<html>
-    <h1></h1>
+    <!-- Showcase -->
+    <header id="showcase">
+        <div class="container">
+            <div class="showcase-container">
+                <div class="showcase-content">
+                    <div class="category category-sports">Sports</div>
+                    <h1>Some Sports Article</h1>
+                    <p>American football, referred to as football in the United States and Canada and also known as
+                        gridiron,
+                        is a team sport played by two teams of eleven players on a rectangular field with goalposts at
+                        each end.
+                        The offense, the team with possession of the oval-shaped football, attempts to advance down the
+                        field by
+                        running with the ball or passing it, while the defense, the team without possession of the ball,
+                        aims to
+                        stop the offense's advance and to take control of the ball for themselves.</p>
+                    <a href="article.html" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Articles -->
+    <section id="home-articles" class="py-2">
+        <div class="container">
+            <h2>Editor Picks</h2>
+            <div class="articles-container">
+                <article class="card">
+                    <img src="img/articles/ent1.jpg" alt="">
+                    <div>
+                        <div class="category category-ent">Entertainment</div>
+                        <h3>
+                            <a href="article1.html">The Voice</a>
+                        </h3>
+                        <p>The Voice is an American singing competition television series broadcast on NBC. It premiered
+                            during the spring television cycle on April 26, 2011. Based on the original The Voice of
+                            Holland, and part of The Voice franchise it has aired seventeen seasons and aims to find
+                            currently unsigned singing talent (solo or duets, professional and amateur) contested by
+                            aspiring singers, age 13 or over, drawn from public auditions.</p>
+                    </div>
+                </article>
+                <article class="card bg-dark">
+                    <div class="category category-sports">Sports</div>
+                    <h3>
+                        <a href="article2.html">Barcelona drop two points as title challenge falters</a>
+                    </h3>
+                    <p>Ter Stegen: the German's incredible run of 499 minutes with a goal being scored in his net ended.
+                        His interventions were still both necessary and important. Ter Stegen saved from Nolito at the
+                        end of the game, which saved Barcelona's blushes too. Another save from Nolito when it was 1-2
+                        was important too. The goalkeeper saved from Brais in the first half and from Aspas before that.
+                        Couldn't do anything for either goal. He did commit an error in the first half with the ball at
+                        his feet but at a very high level for the rest of the game, as usual - 8.</p>
+                </article>
+                <article class="card">
+                    <img src="img/articles/tech1.jpg" alt="">
+                    <div class="category category-tech">Technology</div>
+                    <h3>
+                        <a href="article3.html">iOS 14 Overview</a>
+                    </h3>
+                    <p>Apple in June 2020 introduced the latest version of its iOS operating system, iOS 14, which is
+                        set to be released this fall. iOS 14 is one of Apple's biggest iOS updates to date, introducing
+                        Home screen design changes, major new features, updates for existing apps, Siri improvements,
+                        and many other tweaks that streamline the iOS interface.</p>
+                </article>
+                <article class="card">
+                    <div class="category category-sports">Sports</div>
+                    <h3>
+                        <a href="article4.html">The year Liverpool painted football red</a>
+                    </h3>
+                    <p>The eyes of the footballing world have been on Liverpool in 2019.</p>
+                    <img src="img/articles/sports1.jpg" alt="">
+                </article>
+                <article class="card">
+                    <img src="img/articles/tech2.jpg" alt="">
+                    <div class="category category-tech">Technology</div>
+                    <h3>
+                        <a href="article5.html">iPhone 11 Pro and iPhone 11 Pro Max: the most powerful and advanced
+                            smartphones</a>
+                    </h3>
+                    <p>Featuring a Stunning Pro Display, A13 Bionic, Cutting-Edge Pro Camera System and Longest Battery
+                        Life Ever in iPhone with iPhone 11 Pro Max</p>
+                </article>
+                <article class="card bg-primary">
+                    <div class="category category-sports">Sports</div>
+                    <h3>
+                        <a href="article6.html">Courtois' seven remaining tests</a>
+                    </h3>
+                    <p>In Real Madrid's game against Real Mallorca, Thibaut Courtois completed the minimum of 28 games
+                        that is needed to be in with a chance of winning the Zamora trophy, awarded to the LaLiga
+                        Santander goalkeeper with the lowest goals conceded-per-game ratio.</p>
+                </article>
+                <article class="card">
+                    <div>
+                        <div class="category category-ent">Entertainment</div>
+                        <h3>
+                            <a href="article7.html">Piano</a>
+                        </h3>
+                        <p>The piano is an acoustic, stringed musical instrument invented in Italy by Bartolomeo
+                            Cristofori around the year 1700 (the exact year is uncertain), in which the strings are
+                            struck by wooden hammers that are coated with a softer material. (Modern hammers are covered
+                            with dense wool felt; some early pianos used leather.) It is played using a keyboard, which
+                            is a row of keys (small levers) that the performer presses down or strikes with the fingers
+                            and thumbs of both hands to cause the hammers to strike the strings.</p>
+                    </div>
+                    <img src="img/articles/ent2.jpg" alt="">
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+
 </html>
