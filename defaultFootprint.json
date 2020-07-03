@@ -1,5 +1,5 @@
 {
-    "KhoaNguyen_SizeQuantity" : {
+    "KhoaTran_SizeQuantity" : {
         "no_h1" : 1,
         "no_h2" : 1,
         "no_h3" : 7,
@@ -9,15 +9,30 @@
         "no_img" : 6,
         "no_article": 7,
         "no_char_first_p" : 550,
-        "delta_char_first_p" : 500,
+        "delta_char_first_p" : 50,
         "no_char_p_article" : 550,
-        "delta_char_p_article" : 500
+        "delta_char_p_article" : 100
     },
-    "KhoaLe_Structure": {
-        "header_structure" : "header - div - div - div - div - div == h1 == p == a",
-        "home_structure" : "section - div - h2 - div - article",
-        "article_structure" : "article - img - div - div == h3 - a"
-    },
+    "HoangLe_Structure": [
+        {
+            "tag" : "header",
+            "class": null,
+            "id": "showcase",
+            "series": "[['div', [['div', [['div', ['div', 'h1', 'p', 'a']]]]]]]"
+        },
+        {
+            "tag" : "nav",
+            "class": null,
+            "id": "main-nav",
+            "series": "[['div', ['img', ['div', [['a', ['i']], ['a', ['i']], ['a', ['i']], ['a', ['i']]]], ['ul', [['li', ['a']], ['li', ['a']]]]]]]"
+        },
+        {
+            "tag" : "section",
+            "class": "py-2",
+            "id": "home-articles",
+            "series": "[['div', ['h2', ['div', [['article', ['img', ['div', ['div', ['h3', ['a']], 'p']]]], ['article', ['div', ['h3', ['a']], 'p']], ['article', ['img', 'div', ['h3', ['a']], 'p']], ['article', ['div', ['h3', ['a']], 'p', 'img']], ['article', ['img', 'div', ['h3', ['a']], 'p']], ['article', ['div', ['h3', ['a']], 'p']], ['article', [['div', ['div', ['h3', ['a']], 'p']], 'img']]]]]]]"
+        }
+    ],
     "HoangLe_Abnormal": {
             
     }
