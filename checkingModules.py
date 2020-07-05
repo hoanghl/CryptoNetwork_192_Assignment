@@ -6,7 +6,6 @@ import re
 
 from bs4 import BeautifulSoup
 
-
 ####################
 ## Đọc file `defaultFootprint.json`
 ####################
@@ -26,7 +25,7 @@ def check_KhoaTran_SizeQuantity(htmlParser:BeautifulSoup) -> bool:
     Returns:
         bool: True nếu bị defaced, otherwise False
     """
-    isDefaced = False
+    # isDefaced = False
 
     ## Code goes here..
     ## Anh sẽ đọc số lượng của tag h1 -> h3, tag a, div, số lượng của các ký tự trong tag p 
@@ -35,7 +34,34 @@ def check_KhoaTran_SizeQuantity(htmlParser:BeautifulSoup) -> bool:
     ## Anh dùng biến `footprints` (lúc này là một dictionary) để truy xuất dữ liệu nhé,
     ## khỏi cần hiện thực code đọc 'defaultFootprint.json'
 
-    return isDefaced
+    h1_bs = htmlParser.find_all('h1')
+    h1_count = len(h1_bs)
+
+    h2_bs = htmlParser.find_all('h2')
+    h2_count = len(h2_bs)
+
+    h3_bs = htmlParser.find_all('h3')
+    h3_count = len(h3_bs)
+
+    p_bs = htmlParser.find_all('p')
+    p_count = len(p_bs)
+
+    a_bs = htmlParser.find_all('a')
+    a_count = len(a_bs)
+
+    div_bs = htmlParser.find_all('div')
+    div_count = len(div_bs)
+
+    img_bs = htmlParser.find_all('img')
+    img_count = len(img_bs)
+
+    article_bs = htmlParser.find_all('article')
+    article_count = len(article_bs)
+
+    if (h1_count != footprints['KhoaTran_SizeQuantity']['no_h1']) or (h2_count != footprints['KhoaTran_SizeQuantity']['no_h2']) or (h3_count != footprints['KhoaTran_SizeQuantity']['no_h3']) or (p_count != footprints['KhoaTran_SizeQuantity']['no_p']) or (a_count != footprints['KhoaTran_SizeQuantity']['no_a']) or (div_count != footprints['KhoaTran_SizeQuantity']['no_div']) or (img_count != footprints['KhoaTran_SizeQuantity']['no_img']) or (article_count != footprints['KhoaTran_SizeQuantity']['no_article']):
+        return True
+
+    return False
 
 
 
